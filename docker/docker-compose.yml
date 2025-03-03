@@ -1,0 +1,18 @@
+services:
+  dsrag:
+    image: dsrag-dsrag:ask01
+#    build:
+#      context: ..
+#      dockerfile: Dockerfile
+    volumes:
+      - ./:/app
+      - ./data:/app/data
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - CO_API_KEY=${CO_API_KEY}
+    ports:
+      - "8000:8000"
+    command: >
+      bash -c "echo 'dsRAG is ready to use' && tail -f /dev/null"
+    restart: unless-stopped
+
