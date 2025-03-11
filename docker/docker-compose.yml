@@ -2,7 +2,7 @@ services:
   dsrag:
 #    image: dsrag-dsrag:ask01
 
-    container_name: meltingrock/dsrag:v0.1
+    container_name: dsrag-m01
     build:
       context: ..
       dockerfile: docker/Dockerfile
