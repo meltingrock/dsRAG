@@ -25,7 +25,7 @@ classifiers=[
     "Topic :: Software Development :: Libraries :: Application Frameworks",
     "Topic :: Software Development :: Libraries :: Python Modules"
 ]
-requires-python = ">=3.9"
+requires-python =  ">=3.9,<4.0"
 dynamic = ["dependencies"]
 
 [tool.setuptools.dynamic]
@@ -40,3 +40,24 @@ Contact = "https://github.com/D-Star-AI/dsRAG"
 where = ["."]
 include = ["dsrag", "dsrag.*"]
 exclude = ["dsrag.dsparse.tests", "dsrag.dsparse.tests.*", "dsrag.dsparse.dist", "dsrag.dsparse.dist.*"]
+
+#############################################################################
+#
+#[build-system]
+#requires = ["setuptools>=61.0.0", "wheel"]
+#build-backend = "setuptools.build_meta"
+#
+#[project]
+#name = "dsrag"
+#version = "0.5.0"
+#description = "State-of-the-art RAG pipeline from D-Star AI"
+#readme = "README.md"
+#requires-python = ">=3.10,<4.0"
+#dependencies = []  # Keep it empty if using requirements.txt for dependencies
+#
+#[tool.setuptools]
+#packages = { find = { where = ["."] } }
+#
+#[tool.setuptools.dynamic]
+#dependencies = { file = ["requirements.txt"] }
+#

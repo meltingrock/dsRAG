@@ -1,11 +1,11 @@
 services:
   dsrag:
-    image: dsrag-dsrag:ask01
-#    build:
-#      context: ..
-#      dockerfile: Dockerfile
+#    image: dsrag-dsrag:ask01
+    build:
+      context: ..
+      dockerfile: Dockerfile
     volumes:
-      - ./:/app
+      - ../:/app
       - ./data:/app/data
     environment:
       - OPENAI_API_KEY=${OPENAI_API_KEY}
