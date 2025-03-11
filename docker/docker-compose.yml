@@ -3,7 +3,7 @@ services:
 #    image: dsrag-dsrag:ask01
     build:
       context: ..
-      dockerfile: Dockerfile
+      dockerfile: docker/Dockerfile
     volumes:
       - ../:/app
       - ./data:/app/data

@@ -1,5 +1,9 @@
 FROM python:3.12
 
+# Define amd64 architecture
+ARG ARCH=amd64
+
+# Set the working directory
 WORKDIR /app
 
 # Install system dependencies
@@ -12,11 +16,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Copy requirements file
 COPY ../requirements.txt .
 
-# Install Python dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+# Install dependencies while using a pip cache to avoid re-downloading
+RUN pip install --no-cache-dir --upgrade pip \
+    && pip install --no-cache-dir -r requirements.txt --retries 10
 
-# Install the package in development mode
-RUN pip install -e .
+## Install the package in development mode
+#RUN pip install -e .
 
 # Install huggingface
 RUN pip install transformers torch sentence-transformers
