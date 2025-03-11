@@ -1,9 +1,12 @@
 services:
   dsrag:
 #    image: dsrag-dsrag:ask01
+
+    container_name: meltingrock/dsrag:v0.1
     build:
       context: ..
       dockerfile: docker/Dockerfile
+
     volumes:
       - ../:/app
       - ./data:/app/data
