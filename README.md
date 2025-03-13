@@ -60,6 +60,7 @@ pip install dsrag[all-vector-dbs]
 # Install all optional dependencies
 pip install dsrag[all]
 ```
+For example, suppose you have a bunch of SEC filings in a knowledge base and you ask “What were Apple’s key financial results in the most recent fiscal year?” RSE will identify the most relevant segment as the entire “Consolidated Statement of Operations” section, which will be 5-10 chunks long. Whereas if you ask “Who is Apple’s CEO?” the most relevant segment will be identified as a single chunk that mentions “Tim Cook, CEO.”
 
 # Eval results
 We've evaluated dsRAG on a couple of end-to-end RAG benchmarks.
